@@ -7,6 +7,7 @@ String strDWName = "local file name...";
 
 DownLoadUtilWithOKHttp dw = DownLoadUtilWithOKHttp.getInstance();
 dw.start(checkUpdate.getNewVersionDownloadUrl(), strDWDir, strDWName, new DownLoadUtilWithOKHttp.OnDownloadListener() {
+  
   @Override
   public void onDownloadSuccess(File file) {
   }
@@ -18,5 +19,6 @@ dw.start(checkUpdate.getNewVersionDownloadUrl(), strDWDir, strDWName, new DownLo
   @Override
   public void onDownloadFailed(Exception e) {
   }
+  
 });
 
