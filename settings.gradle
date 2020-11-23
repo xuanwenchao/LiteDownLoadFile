@@ -1,2 +1,2 @@
-include ':app',':downloadfileutil'
+include ':app', ':litedownloadfile'
 rootProject.name='TestProject'
