@@ -1,24 +1,46 @@
 # LiteDownLoadFile
+
 down load file with okhttpclient Lightly in android.
 
+# How to use
 
-String strDWDir = "down load diretory...";
-String strDWName = "local file name...";
+Confirm your project added it in your root build.gradle at the end of repositories:
+	
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+  
+Add it in your root build.gradle at the end of repositories:
 
-DownLoadUtilWithOKHttp dw = DownLoadUtilWithOKHttp.getInstance();
-dw.start(checkUpdate.getNewVersionDownloadUrl(), strDWDir, strDWName, new DownLoadUtilWithOKHttp.OnDownloadListener() {
+	dependencies {
+	        implementation 'com.github.xuanwenchao:LiteDownLoadFile:Tag'
+	}
   
-  @Override
-  public void onDownloadSuccess(File file) {
-  }
+
+# Sample code 
+
+	String strDWDir = "down load diretory...";
+	String strDWName = "local file name...";
+
+	DownLoadUtilWithOKHttp dw = DownLoadUtilWithOKHttp.getInstance();
+	dw.start(checkUpdate.getNewVersionDownloadUrl(), strDWDir, strDWName, new DownLoadUtilWithOKHttp.OnDownloadListener() {
   
-  @Override
-  public void onDownloading(int progress) {
-  }
+	  @Override
+  	public void onDownloadSuccess(File file) {
+      //do your job.
+	  }
   
-  @Override
-  public void onDownloadFailed(Exception e) {
-  }
+  	@Override
+	  public void onDownloading(int progress) {
+      //do your job.
+  	}
   
-});
+	  @Override
+  	public void onDownloadFailed(Exception e) {
+      //do your job.
+	  }
+	});
 
